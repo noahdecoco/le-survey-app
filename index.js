@@ -1,12 +1,10 @@
-const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy();
-
 const PORT = process.env.PORT || 3000;
 
+const express = require('express');
 const app = express();
 
-passport.use(new GoogleStrategy());
+require('./services/passport-config');
+require('./routes/auth-routes')(app);
 
 app.listen(PORT, () => {
     console.log('Listening on port:', PORT);
