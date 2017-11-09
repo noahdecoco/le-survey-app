@@ -7,7 +7,6 @@ import * as actions from '../actions';
 
 class App extends Component {
     componentDidMount() {
-        console.log('mounted');
         this.props.fetchUser();
     }
 
@@ -15,7 +14,15 @@ class App extends Component {
         return (
             <div className="container">
                 <BrowserRouter>
-                    <Header />
+                    <div>
+                        <Header />
+                        <Route exact path="/" render={() => <h1>Emaily</h1>} />
+                        <Route
+                            exact
+                            path="/surveys"
+                            render={() => <h1>Dash</h1>}
+                        />
+                    </div>
                 </BrowserRouter>
             </div>
         );
