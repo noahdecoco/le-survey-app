@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ButtonStripe from './ButtonStripe';
 
 class Header extends Component {
     renderContent() {
@@ -14,11 +15,20 @@ class Header extends Component {
                     </li>
                 );
             default:
-                return (
-                    <li>
+                return [
+                    <li key="1">
+                        <ButtonStripe />
+                    </li>,
+                    <li key="2" style={{ margin: '0 10px 0 20px' }}>
+                        Credits: ${this.props.auth.credits}
+                    </li>,
+                    <li key="3">
+                        <Link to="/surveys">Dashboard</Link>
+                    </li>,
+                    <li key="4">
                         <a href="/api/logout">Logout</a>
                     </li>
-                );
+                ];
         }
     }
 
@@ -27,7 +37,7 @@ class Header extends Component {
             <nav>
                 <div className="nav-wrapper">
                     <Link to="/" className="left brand-logo">
-                        Logo
+                        Emaily
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>
                 </div>

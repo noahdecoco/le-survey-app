@@ -1,5 +1,4 @@
 const passport = require('passport');
-const passportConfig = require('./../services/passport-config');
 
 module.exports = app => {
     app.get(

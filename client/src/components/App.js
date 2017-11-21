@@ -16,11 +16,15 @@ class App extends Component {
                 <BrowserRouter>
                     <div>
                         <Header />
-                        <Route exact path="/" render={() => <h1>Emaily</h1>} />
+                        <Route
+                            exact
+                            path="/"
+                            render={() => <h1>Welcome to Emaily</h1>}
+                        />
                         <Route
                             exact
                             path="/surveys"
-                            render={() => <h1>Dash</h1>}
+                            render={() => <h1>This is your dashboard</h1>}
                         />
                     </div>
                 </BrowserRouter>
