@@ -21,9 +21,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./models/User');
+require('./models/Survey');
+
 require('./services/passport-config');
 require('./routes/auth-routes')(app);
 require('./routes/billing-routes')(app);
+require('./routes/survey-routes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
