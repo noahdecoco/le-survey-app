@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from './Header';
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 import * as actions from '../actions';
 
 class App extends Component {
@@ -21,10 +23,11 @@ class App extends Component {
                             path="/"
                             render={() => <h1>Welcome to Emaily</h1>}
                         />
+                        <Route exact path="/surveys" component={Dashboard} />
                         <Route
                             exact
-                            path="/surveys"
-                            render={() => <h1>This is your dashboard</h1>}
+                            path="/surveys/new"
+                            component={SurveyNew}
                         />
                     </div>
                 </BrowserRouter>
