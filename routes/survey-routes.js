@@ -38,8 +38,8 @@ module.exports = app => {
 
             req.user.credits--;
 
-            const user = req.user.save();
-
+            const user = await req.user.save();
+            console.log('"the user"', user);
             res.send(user);
         } catch (err) {
             res.status(422).send(err);
