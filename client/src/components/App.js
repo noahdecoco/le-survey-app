@@ -21,7 +21,7 @@ class App extends Component {
                         <Route
                             exact
                             path="/"
-                            render={() => <h1>Welcome to Emaily</h1>}
+                            render={() => <h1>Le Survey App</h1>}
                         />
                         <Route exact path="/surveys" component={Dashboard} />
                         <Route

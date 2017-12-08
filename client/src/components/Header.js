@@ -36,8 +36,11 @@ class Header extends Component {
         return (
             <nav>
                 <div className="nav-wrapper">
-                    <Link to="/" className="left brand-logo">
-                        Emaily
+                    <Link
+                        to="/"
+                        className="left brand-logo"
+                        style={{ marginLeft: '4px' }}>
+                        LSA
                     </Link>
                     <ul className="right">{this.renderContent()}</ul>
                 </div>
